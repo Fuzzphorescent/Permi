@@ -2,10 +2,14 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
+from .models import User
+from .serializer import UserSerializer
 
-api_view(['GET'])
+@api_view(['GET'])
 def getID(request):
-    return Response()
+    user = User.objects.all()
+    serializer = UserSerializer(food, many = True)
+    return Response(serializer.data)
 
 def say_hello(request):
     # pull account details from the database 
