@@ -8,7 +8,15 @@ from .serializer import UserSerializer
 @api_view(['GET'])
 def getID(request):
     user = User.objects.all()
-    serializer = UserSerializer(food, many = True)
+    serializer = UserSerializer(user, many = True)
+    
+    return Response(serializer.data)
+
+@api_view(['POST'])
+def postID(request):
+    serializer = UserSerializer(data=request.data)
+    if serializer.is_valid():
+        serializer.save()
     return Response(serializer.data)
 
 def say_hello(request):
