@@ -1,0 +1,11 @@
+app_id: "d697fd45-2c51-41de-9270-3c991cf3cc83" 
+app_secret: "FPU8Q~LItidvZEtOZjcDfYVhjlqIpr2yt~C4Lc5y" 
+redirect: "http://localhost:8000/dashboard" 
+scopes:   
+    - user.read
+    - user.read.all
+    - offline_access
+    - openid
+    - user.profile
+    - email  
+    - authority: "https://login.microsoftonline.com/d697fd45-2c51-41de-9270-3c991cf3cc83"
